@@ -1,0 +1,5 @@
+[user]
+	name = Parker Lawrence
+	email = parker.alford@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
