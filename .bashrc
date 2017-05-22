@@ -23,9 +23,5 @@ fi
 
 export EDITOR='vim'
 
-# quote
-alias quote-dev-db='psql -h  -d  -U '
-alias quote-prod-db='psql -h  -d  -U '
-
 # tmuxinator
 alias tmx='tmuxinator'
