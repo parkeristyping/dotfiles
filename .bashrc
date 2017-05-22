@@ -9,3 +9,23 @@ eval "$(jenv init -)"
 
 # Initialize rbenv for Ruby version management
 eval "$(rbenv init -)"
+
+# Initialize nvm for Node version management
+source $(brew --prefix nvm)/nvm.sh
+
+# Prompt
+export PS1="\W\\$ \[$(tput sgr0)\]"
+
+# Load secrets
+if [ -f $HOME/.secrets ]; then
+    source $HOME/.secrets
+fi
+
+export EDITOR='vim'
+
+# quote
+alias quote-dev-db='psql -h  -d  -U '
+alias quote-prod-db='psql -h  -d  -U '
+
+# tmuxinator
+alias tmx='tmuxinator'
