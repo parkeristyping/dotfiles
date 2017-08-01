@@ -1,3 +1,6 @@
+# Set PATH
+PATH=$PATH:~/bin
+
 # Dotfile config via https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
@@ -25,3 +28,6 @@ export EDITOR='vim'
 
 # tmuxinator
 alias tmx='tmuxinator'
+
+# for when psql craps out, usually after forced power down
+alias fix-pg='rm /usr/local/var/postgres/postmaster.pid && brew services restart postgresql'
