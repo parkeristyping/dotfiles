@@ -13,8 +13,17 @@ eval "$(jenv init -)"
 # Initialize rbenv for Ruby version management
 eval "$(rbenv init -)"
 
+# Add rbenv shims to path
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"'
+
+# Add anaconda3 to path
+export PATH=/anaconda3/bin:$PATH
+
+# Add astronomer to path
+export PATH="$PATH:$HOME/.astro/"
+
 # Initialize nvm for Node version management
-source $(brew --prefix nvm)/nvm.sh
+# source $(brew --prefix nvm)/nvm.sh
 
 # Prompt
 export PS1="\W\\$ \[$(tput sgr0)\]"
@@ -31,3 +40,14 @@ alias tmx='tmuxinator'
 
 # for when psql craps out, usually after forced power down
 alias fix-pg='rm /usr/local/var/postgres/postmaster.pid && brew services restart postgresql'
+
+# Make forking work
+# https://blog.phusion.nl/2017/10/13/why-ruby-app-servers-break-on-macos-high-sierra-and-what-can-be-done-about-it/
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+export PGSSLMODE=require
+
+# ssh agent
+# eval "$(ssh-agent -s)"
+# ssh-add ~/.ssh/id_rsa
+eval `keychain --eval --agents ssh --inherit any id_rsa`

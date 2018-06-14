@@ -36,5 +36,8 @@
 ehthumbs.db
 Thumbs.db
 
-# Clojure stuff
-dbgr.clj
+# Ad hoc stuff
+PARKER_CHANGELOG.md
+requests.http
+
+scratch.*
